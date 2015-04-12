@@ -1,13 +1,26 @@
-var express = require('express')
-var app = express();
+global.$ = $;
+var bower =  require('bower');
+var inquirer =  require('inquirer');
+var shell = require('nw.gui').Shell;
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+bower.commands
+.install(['jquery'], { save: true }, { interactive: true })
+// ..
+.on('prompt', function (prompts, callback) {
+    inquirer.prompt(prompts, callback);
+});
 
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
+var serialPort = require("serialport");
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+/*
+var content = $('.content');
+
+$(document).ready(function() {
+	serialPort.list(function (err, ports) {
+	  ports.forEach(function(port) {
+	    content.push(port.comName);
+	    console.log(port.pnpId);
+	    console.log(port.manufacturer);
+	  });
+	});
+});*/
