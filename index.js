@@ -12,7 +12,7 @@ bower.commands
 
 var serialPort = require("serialport");
 
-/*
+
 var content = $('.content');
 
 $(document).ready(function() {
@@ -23,4 +23,4 @@ $(document).ready(function() {
 	    console.log(port.manufacturer);
 	  });
 	});
-});*/
+});
