@@ -25,8 +25,8 @@
   "license": "MIT",
   "window": {
     "show": true,
-    "toolbar": true,
-    "frame": true,
+    "toolbar": false,
+    "frame": false,
     "position": "center",
     "width": 1024,
     "height": 768,

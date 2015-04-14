@@ -50,6 +50,7 @@ requirejs(['jquery', 'bootstrap', 'backbone','backbonemarionette'], function($){
 
 	// Global App skeleton for backbone
 	window.App = new Backbone.Marionette.Application();
+	win = require('nw.gui').Window.get();
 
 	var os = require('os');
 
@@ -66,7 +67,7 @@ requirejs(['jquery', 'bootstrap', 'backbone','backbonemarionette'], function($){
 			return App.Providers.get(provider);
 		}
 	};
-	
+
 	App.Config = Config;
 
 	(function (App) {
