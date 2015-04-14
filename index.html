@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dark.css" rel="stylesheet">
+    <link href="css/title_bar.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,16 +20,18 @@
     <![endif]-->
   </head>
   <body>
-
+    <div id = "header"></header>
+<article id="main">
+</article>
     <script id="header-tpl" type="text/html">
-   <nav class="btn-set <%= process.platform %>">
+<nav class="btn-set <%= process.platform %>">
   <% _.each(getButtons(), function(button) { %>
   <button class="btn-os os-<%= button %>"></button>
   <% }); %>
 </nav>
 
 <nav class="btn-set fs-<%= process.platform %>">
-  <button class="btn-os fullscreen tooltipped" data-toggle="tooltip" data-placement="<%= fsTooltipPos() %>" title="<%= i18n.__("Toggle Fullscreen") %>"></button>
+  <button class="btn-os fullscreen tooltipped" data-toggle="tooltip" data-placement="<%= fsTooltipPos() %>" title=""></button>
 </nav>
 <h1>
 
