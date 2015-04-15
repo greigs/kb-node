@@ -7,10 +7,35 @@ require('nw.gui').Window.get().showDevTools();
 var inquirer =  require('inquirer');
 
 
+// Load native UI library
+var gui = require('nw.gui');
+
+// Create a tray icon
+var tray = new gui.Tray({ title: 'Tray', icon: 'images/icon.png' });
+
+// Give it a menu
+var menu = new gui.Menu();
+menu.append(new gui.MenuItem({ type: 'checkbox', label: 'box1' }));
+tray.menu = menu;
+
 //var shell = require('nw.gui').Shell;
 
 var SerialPort = require("serialport").SerialPort;
 var serialPort = null;
+
+
+var edge = require('edge');
+
+var helloWorld = edge.func(function () {/*
+    async (input) => { 
+        return ".NET Welcomes " + input.ToString(); 
+    }*/
+});
+
+helloWorld('JavaScript', function (error, result) {
+    if (error) throw error;
+    console.log(result);
+});
 
 
 function openSerial(comPort){
