@@ -26,6 +26,20 @@ var serialPort = null;
 
 var edge = require('edge');
 
+
+var dotNetFunction = edge.func({
+	assemblyFile: 'C:\\repo\\IronAHK\\IronAHK\\bin\\Debug\\IronAHK.exe',
+	typeName: 'IronAHK.Program',
+    methodName: 'Test' // This must be Func<object,Task<object>>);
+});
+
+var payload = {
+};
+
+dotNetFunction(payload, function (error, result) {
+	console.log(result);
+});
+
 var helloWorld = edge.func(function () {/*
     async (input) => { 
         return ".NET Welcomes " + input.ToString(); 
